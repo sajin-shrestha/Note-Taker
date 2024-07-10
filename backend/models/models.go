@@ -18,6 +18,7 @@ type NoteModel struct {
 	Title       string    `json:"title"`
 	Description string    `json:"description"`
 	ImageURL    string    `json:"image"`
+	Completed   bool      `json:"completed"`
 	CreatedAt   time.Time `json:"createdAt"`
 	UpdatedAt   time.Time `json:"updatedAt"`
 }
