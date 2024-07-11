@@ -14,11 +14,22 @@ type Account struct {
 }
 
 type NoteModel struct {
-	ID          int       `json:"id"`
-	Title       string    `json:"title"`
-	Description string    `json:"description"`
+	ID          int    `json:"id"`
+	Title       string `json:"title"`
+	Description string `json:"description"`
 	// ImageURL    string    `json:"image"`
-	Completed   bool      `json:"completed"`
-	CreatedAt   time.Time `json:"createdAt"`
-	UpdatedAt   time.Time `json:"updatedAt"`
+	Completed bool      `json:"completed"`
+	CreatedAt time.Time `json:"createdAt"`
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+type LoginUserPayload struct {
+	Email    string `json:"email" validate:"required,email"`
+	Password string `json:"password" validate:"required"`
+}
+
+type RegisterUserPayLoad struct {
+	Email    string `json:"email" validate:"required,email"`
+	Username string `json:"username" validate:"required"`
+	Password string `json:"password" validate:"required,min=8,max=130"`
 }
