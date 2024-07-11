@@ -5,9 +5,7 @@ import Link from '@mui/material/Link'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
-import FacebookIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import TwitterIcon from '@mui/icons-material/X'
+import GithubIcon from '@mui/icons-material/GitHub'
 
 const logoStyle = {
   width: '150px',
@@ -24,7 +22,7 @@ function Copyright() {
       mt={1}
     >
       {'Copyright © '}
-      <Link href="/">Travel-Planner&nbsp;</Link>
+      <Link href="/">Note Taker&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   )
@@ -84,27 +82,11 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/"
+            href="https://github.com/sajin-shrestha"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://x.com/"
-            aria-label="X"
-            sx={{ alignSelf: 'center' }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.linkedin.com/"
-            aria-label="LinkedIn"
-            sx={{ alignSelf: 'center' }}
-          >
-            <LinkedInIcon />
+            <GithubIcon />
           </IconButton>
         </Stack>
       </Box>
