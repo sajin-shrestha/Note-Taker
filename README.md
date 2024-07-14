@@ -38,15 +38,18 @@ DB_USER=<database-username>
 DB_PASSWORD=<database-password>
 DB_NAME=<database-name>
 DB_PORT=5432
+PORT=8000
+```
 
 # JWT_SECRET_KEY=<your-custom-jwt-secret-key>
-```
+
+````
 
 3. **Install Dependencies:**
 
 ```bash
 go mod tidy
-```
+````
 
 4. **Start the backend server:**
 
