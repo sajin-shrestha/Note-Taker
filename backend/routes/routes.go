@@ -14,6 +14,7 @@ func InitializeRoutes() *mux.Router {
 	r.HandleFunc("/post", handlers.CreateNote).Methods("POST")
 	r.HandleFunc("/posts", handlers.GetNotes).Methods("GET")
 	r.HandleFunc("/post/{id}", handlers.GetNoteByID).Methods("GET")
+	r.HandleFunc("/post/{id}", handlers.UpdateNoteByID).Methods("PUT")
 	r.HandleFunc("/post/{id}", handlers.DeleteNotesByID).Methods("DELETE")
 
 	return r

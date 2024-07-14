@@ -53,6 +53,7 @@ func GetNoteByID(w http.ResponseWriter, r *http.Request) {
 	utils.RespondJSON(w, http.StatusOK, notes)
 }
 
+// DELETE -> /note/{id}
 func DeleteNotesByID(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 
@@ -63,9 +64,34 @@ func DeleteNotesByID(w http.ResponseWriter, r *http.Request) {
 	db.First(&notes, id)
 	if notes.ID == 0 {
 		utils.RespondJSON(w, http.StatusNotFound, "Post donot exists or has been already deleted")
+		return
 	}
 
 	db.Delete(&notes)
 
 	utils.RespondJSON(w, http.StatusOK, "Post deleted")
+}
+
+// PUT -> /notes/{id}
+func UpdateNoteByID(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	id, _ := strconv.Atoi(params["id"])
+
+	var note models.NotePost
+	db.First(&note, id)
+	if note.ID == 0 {
+		utils.RespondJSON(w, http.StatusNotFound, "Note not found")
+		return
+	}
+
+	var updatedNote models.NotePost
+	json.NewDecoder(r.Body).Decode(&updatedNote)
+
+	note.Title = updatedNote.Title
+	note.Author = updatedNote.Author
+	note.Description = updatedNote.Description
+
+	db.Save(&note)
+
+	utils.RespondJSON(w, http.StatusOK, note)
 }
