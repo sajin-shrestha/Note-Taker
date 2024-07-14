@@ -27,7 +27,6 @@ To run the application locally, follow these steps:
 ```bash
 git clone https://github.com/sajin-shrestha/Note-Taker.git
 cd note-taker
-cd backend
 
 ```
 
