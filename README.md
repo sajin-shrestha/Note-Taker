@@ -41,8 +41,6 @@ DB_PORT=5432
 PORT=8000
 ```
 
-# JWT_SECRET_KEY=<your-custom-jwt-secret-key>
-
 ````
 
 3. **Install Dependencies:**
