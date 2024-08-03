@@ -41,8 +41,6 @@ DB_PORT=5432
 PORT=8000
 ```
 
-````
-
 3. **Install Dependencies:**
 
 ```bash
